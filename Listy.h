@@ -27,4 +27,7 @@ public:
     // @param v Wartosc znakowa do dodania.
     void Lista_Dodanie_na_poczatek(char v);
 
+    // @brief Wyswietla elementy listy od poczatku do konca.
+    void Lista_wyswietl();
+
 };

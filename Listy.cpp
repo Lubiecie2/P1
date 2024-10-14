@@ -20,3 +20,14 @@ void replisty::Lista_Dodanie_na_poczatek(char v) {
     }
     count++;
 }
+
+/*---Wyswietlanie listy---*/
+void replisty::Lista_wyswietl() {
+    elisty* obecny_element = head;
+
+    while (obecny_element != 0) {
+        std::cout << obecny_element->data << " ";
+        obecny_element = obecny_element->next;
+    }
+    std::cout << std::endl;
+}
