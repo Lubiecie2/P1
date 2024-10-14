@@ -6,6 +6,7 @@ elisty::elisty(char val) : data(val), prev(nullptr), next(nullptr) {}
 replisty::replisty() : head(nullptr), tail(nullptr), count(0) {}
 
 replisty::~replisty() {
+    Lista_Czyszczenie();
 }
 /*---Dodanie elementu na początek listy---*/
 void replisty::Lista_Dodanie_na_poczatek(char v) {
@@ -155,4 +156,44 @@ void replisty::Lista_Wyswietlanie_poprzedniego_elementu(int index) {
     else {
         std::cout << "Brak poprzedniego elementu\n";
     }
+}
+
+/*---Usuwanie wybranego elemetnu z listy---*/
+void replisty::Lista_Usuwanie_wybranego_elementu(int index) {
+    elisty* obecny_element = head;
+
+    for (int i = 1; i < index; i++) {
+        obecny_element = obecny_element->next;
+    }
+
+    if (obecny_element->prev != 0) {
+        obecny_element->prev->next = obecny_element->next;
+    }
+    else {
+        head = obecny_element->next;
+    }
+
+    if (obecny_element->next != 0) {
+        obecny_element->next->prev = obecny_element->prev;
+    }
+    else {
+        tail = obecny_element->prev;
+    }
+
+    delete obecny_element;
+    --count;
+}
+/*---Czyszczenie listy---*/
+void replisty::Lista_Czyszczenie() {
+    elisty* obecny_element = head;
+
+    while (obecny_element != 0) {
+        elisty* nws = obecny_element;
+        obecny_element = obecny_element->next;
+        delete nws;
+    }
+
+    head = 0;
+    tail = 0;
+    count = 0;
 }

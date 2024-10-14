@@ -57,4 +57,10 @@ public:
     // @param index Pozycja, z ktorej nalezy wyswietlic poprzedni element.
     void Lista_Wyswietlanie_poprzedniego_elementu(int index);
 
+    // @brief Usuwa wybrany element z listy na podstawie podanego indeksu.
+    // @param index Pozycja elementu do usuniecia.
+    void Lista_Usuwanie_wybranego_elementu(int index);
+
+    // @brief Czysti cala liste i zwalnia przydzielona pamiec.
+    void Lista_Czyszczenie();
 };

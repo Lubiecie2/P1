@@ -32,6 +32,10 @@ int main()
     lista.Lista_Wyswietlanie_Nastepnego_elementu(4);
 
     std::cout << "Poprzedni element po podanym indeksie: ";
-    lista.Lista_Wyswietlanie_Nastepnego_elementu(3);
+    lista.Lista_Wyswietlanie_poprzedniego_elementu(3);
+
+    std::cout << "Lista po usunieciu pierwszego elementu: ";
+    lista.Lista_Usuwanie_pierwszego_elementu();
+    lista.Lista_wyswietl();
 
 };
