@@ -48,3 +48,13 @@ void replisty::Lista_wyswietl() {
     std::cout << std::endl;
 }
 
+/*---Wyswietlanie listy od konca---*/
+void replisty::Lista_wyswietl_od_konca() {
+    elisty* obecny_element = tail;
+    while (obecny_element != 0) {
+        std::cout << obecny_element->data << " ";
+        obecny_element = obecny_element->prev;
+    }
+    std::cout << std::endl;
+}
+

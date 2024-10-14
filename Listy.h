@@ -35,5 +35,6 @@ public:
     // @brief Wyswietla elementy listy od poczatku do konca.
     void Lista_wyswietl();
 
-
+    // @brief Wyswietla elementy listy od konca do poczatku.
+    void Lista_wyswietl_od_konca();
 };
