@@ -108,3 +108,36 @@ void replisty::Lista_Usuwanie_pierwszego_elementu() {
     --count;
 }
 
+/*---Usuwanie ostatniego elementu listy---*/
+void replisty::Lista_usuwanie_ostatniego_elementu() {
+    if (tail == 0) {
+        std::cout << "Lista jest pusta";
+    }
+    if (count > 1) {
+        elisty* nws = tail->prev;
+        delete tail;
+        tail = nws;
+        tail->next = 0;
+    }
+    if (count == 1) {
+        delete tail;
+        head = 0;
+        tail = 0;
+    }
+    --count;
+}
+
+/*---wyswietlanie elementu po wskazanym indeksie---*/
+void replisty::Lista_Wyswietlanie_Nastepnego_elementu(int index) {
+    elisty* obecny_element = head;
+
+    for (int i = 1; i < index; i++) {
+        obecny_element = obecny_element->next;
+    }
+    if (obecny_element->next != 0) {
+        std::cout << obecny_element->next->data << std::endl;
+    }
+    else {
+        std::cout << "Brak następnego elementu\n";
+    }
+}

@@ -46,4 +46,11 @@ public:
     // @brief Usuwa pierwszy element listy.
     void Lista_Usuwanie_pierwszego_elementu();
 
+    // @brief Usuwa ostatni element listy.
+    void Lista_usuwanie_ostatniego_elementu();
+
+    // @brief Wyswietla nastepny element w stosunku do danego indeksu.
+    // @param index Pozycja, z ktorej nalezy wyswietlic nastepny element.
+    void Lista_Wyswietlanie_Nastepnego_elementu(int index);
+
 };
