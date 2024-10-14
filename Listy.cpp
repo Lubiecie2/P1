@@ -58,3 +58,34 @@ void replisty::Lista_wyswietl_od_konca() {
     std::cout << std::endl;
 }
 
+/*---Dodanie elementu pod wskazany indeks---*/
+void replisty::Lista_Dodanie_do_srodka(char v, int index) {
+    if (index == 0) {
+        Lista_Dodanie_na_poczatek(v);
+        return;
+    }
+    if (index == count) {
+        Lista_Dodanie_na_koniec(v);
+        return;
+    }
+    elisty* obecny_element = head;
+
+    for (int i = 0; i < index; i++) {
+        obecny_element = obecny_element->next;
+    }
+
+    elisty* temp_prev = obecny_element->prev;
+
+    elisty* nws = new elisty(v);
+
+    nws->next = obecny_element;
+    nws->prev = temp_prev;
+
+    if (temp_prev != 0) {
+        temp_prev->next = nws;
+    }
+    obecny_element->prev = nws;
+
+    ++count;
+}
+

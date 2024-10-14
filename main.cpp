@@ -11,9 +11,13 @@ int main()
     lista.Lista_Dodanie_na_koniec('3');
     lista.Lista_Dodanie_na_koniec('4');
 
+    lista.Lista_Dodanie_do_srodka('5', 3);
+    lista.Lista_Dodanie_do_srodka('6', 1);
+
     std::cout << "Elementy listy od poczatku: ";
     lista.Lista_wyswietl();
 
     std::cout << "Elementy listy od konca: ";
     lista.Lista_wyswietl_od_konca();
+
 };

@@ -37,4 +37,10 @@ public:
 
     // @brief Wyswietla elementy listy od konca do poczatku.
     void Lista_wyswietl_od_konca();
+
+    // @brief Dodaje nowy element na wskazanym indeksie w liscie.
+    // @param v Wartosc znakowa do dodania.
+    // @param index Pozycja, w ktorej nalezy wstawic nowy element.
+    void Lista_Dodanie_do_srodka(char v, int index);
+
 };
