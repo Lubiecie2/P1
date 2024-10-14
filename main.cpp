@@ -20,4 +20,7 @@ int main()
     std::cout << "Elementy listy od konca: ";
     lista.Lista_wyswietl_od_konca();
 
+    std::cout << "Lista po usunieciu pierwszego elementu: ";
+    lista.Lista_Usuwanie_pierwszego_elementu();
+    lista.Lista_wyswietl();
 };

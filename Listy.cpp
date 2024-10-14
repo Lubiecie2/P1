@@ -89,3 +89,22 @@ void replisty::Lista_Dodanie_do_srodka(char v, int index) {
     ++count;
 }
 
+/*---Usuwanie pierwszego elementu listy---*/
+void replisty::Lista_Usuwanie_pierwszego_elementu() {
+    if (head == 0) {
+        std::cout << "Lista jest pusta";
+    }
+    if (count > 1) {
+        elisty* nws = head->next;
+        delete head;
+        head = nws;
+        head->prev = 0;
+    }
+    if (count == 1) {
+        delete head;
+        head = 0;
+        tail = 0;
+    }
+    --count;
+}
+

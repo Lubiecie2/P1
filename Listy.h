@@ -43,4 +43,7 @@ public:
     // @param index Pozycja, w ktorej nalezy wstawic nowy element.
     void Lista_Dodanie_do_srodka(char v, int index);
 
+    // @brief Usuwa pierwszy element listy.
+    void Lista_Usuwanie_pierwszego_elementu();
+
 };
