@@ -53,4 +53,8 @@ public:
     // @param index Pozycja, z ktorej nalezy wyswietlic nastepny element.
     void Lista_Wyswietlanie_Nastepnego_elementu(int index);
 
+    // @brief Wyswietla poprzedni element w stosunku do danego indeksu.
+    // @param index Pozycja, z ktorej nalezy wyswietlic poprzedni element.
+    void Lista_Wyswietlanie_poprzedniego_elementu(int index);
+
 };

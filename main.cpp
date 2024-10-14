@@ -31,4 +31,7 @@ int main()
     std::cout << "Nastepny element po podanym indeksie: ";
     lista.Lista_Wyswietlanie_Nastepnego_elementu(4);
 
+    std::cout << "Poprzedni element po podanym indeksie: ";
+    lista.Lista_Wyswietlanie_Nastepnego_elementu(3);
+
 };

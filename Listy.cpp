@@ -141,3 +141,18 @@ void replisty::Lista_Wyswietlanie_Nastepnego_elementu(int index) {
         std::cout << "Brak następnego elementu\n";
     }
 }
+
+/*---wyswietlanie elementu przed wskazanym indeksem---*/
+void replisty::Lista_Wyswietlanie_poprzedniego_elementu(int index) {
+    elisty* obecny_element = head;
+
+    for (int i = 1; i < index; i++) {
+        obecny_element = obecny_element->next;
+    }
+    if (obecny_element->prev != 0) {
+        std::cout << obecny_element->prev->data << std::endl;
+    }
+    else {
+        std::cout << "Brak poprzedniego elementu\n";
+    }
+}
