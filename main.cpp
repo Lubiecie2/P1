@@ -3,5 +3,8 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    replisty lista;
+
+    lista.Lista_Dodanie_na_poczatek('1');
+    lista.Lista_Dodanie_na_poczatek('2');
 };

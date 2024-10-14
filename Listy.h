@@ -22,4 +22,9 @@ public:
 
     // @brief Zniszczenie obiektu replisty i zwolnienie przydzielonej pamieci.
     ~replisty();
+
+    // @brief Dodaje nowy element na poczatku listy.
+    // @param v Wartosc znakowa do dodania.
+    void Lista_Dodanie_na_poczatek(char v);
+
 };
