@@ -23,4 +23,7 @@ int main()
     std::cout << "Lista po usunieciu pierwszego elementu: ";
     lista.Lista_Usuwanie_pierwszego_elementu();
     lista.Lista_wyswietl();
+
+    std::cout << "Nastepny element po podanym indeksie: ";
+    lista.Lista_Wyswietlanie_Nastepnego_elementu(4);
 };
