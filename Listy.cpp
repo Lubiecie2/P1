@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "Listy.h"
 
-elisty::elisty(char val) : data(val), prev(nullptr), next(nullptr) {}
+elisty::elisty(char v) : data(v), prev(nullptr), next(nullptr) {}
 
 replisty::replisty() : head(nullptr), tail(nullptr), count(0) {}
 
@@ -28,7 +28,7 @@ void replisty::Lista_Dodanie_na_koniec(char v) {
     nws->next = nullptr;
     nws->prev = tail;
 
-    if (tail) {
+    if (tail != nullptr) {
         tail->next = nws;
     }
     else {
@@ -147,7 +147,7 @@ void replisty::Lista_Wyswietlanie_Nastepnego_elementu(int index) {
         std::cout << obecny_element->next->data << std::endl;
     }
     else {
-        std::cout << "Brak następnego elementu\n";
+        std::cout << "Brak następnego elementu" << std::endl;
     }
 }
 
@@ -162,7 +162,7 @@ void replisty::Lista_Wyswietlanie_poprzedniego_elementu(int index) {
         std::cout << obecny_element->prev->data << std::endl;
     }
     else {
-        std::cout << "Brak poprzedniego elementu\n";
+        std::cout << "Brak poprzedniego elementu" << std::endl;
     }
 }
 
