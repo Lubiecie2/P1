@@ -25,7 +25,7 @@ void replisty::Lista_Dodanie_na_poczatek(char v) {
 /*---Dodanie elementu na koniec listy---*/
 void replisty::Lista_Dodanie_na_koniec(char v) {
     elisty* nws = new elisty(v);
-    nws->next = 0;
+    nws->next = nullptr;
     nws->prev = tail;
 
     if (tail) {
@@ -42,7 +42,7 @@ void replisty::Lista_Dodanie_na_koniec(char v) {
 void replisty::Lista_wyswietl() {
     elisty* obecny_element = head;
 
-    while (obecny_element != 0) {
+    while (obecny_element != nullptr) {
         std::cout << obecny_element->data << " ";
         obecny_element = obecny_element->next;
     }
@@ -52,7 +52,7 @@ void replisty::Lista_wyswietl() {
 /*---Wyswietlanie listy od konca---*/
 void replisty::Lista_wyswietl_od_konca() {
     elisty* obecny_element = tail;
-    while (obecny_element != 0) {
+    while (obecny_element != nullptr) {
         std::cout << obecny_element->data << " ";
         obecny_element = obecny_element->prev;
     }
@@ -92,38 +92,46 @@ void replisty::Lista_Dodanie_do_srodka(char v, int index) {
 
 /*---Usuwanie pierwszego elementu listy---*/
 void replisty::Lista_Usuwanie_pierwszego_elementu() {
-    if (head == 0) {
+    if (head == nullptr) {
         std::cout << "Lista jest pusta";
+        return;
     }
     if (count > 1) {
         elisty* nws = head->next;
         delete head;
         head = nws;
-        head->prev = 0;
+        head->prev = nullptr;
+        if (head != nullptr) { 
+            head->prev = nullptr; 
+        }
     }
     if (count == 1) {
         delete head;
-        head = 0;
-        tail = 0;
+        head = nullptr;
+        tail = nullptr;
     }
     --count;
 }
 
 /*---Usuwanie ostatniego elementu listy---*/
 void replisty::Lista_usuwanie_ostatniego_elementu() {
-    if (tail == 0) {
+    if (tail == nullptr) {
         std::cout << "Lista jest pusta";
+        return;
     }
     if (count > 1) {
         elisty* nws = tail->prev;
         delete tail;
         tail = nws;
-        tail->next = 0;
+        tail->next = nullptr;
+        if (tail != nullptr) { 
+            tail->next = nullptr; 
+        }
     }
     if (count == 1) {
         delete tail;
-        head = 0;
-        tail = 0;
+        head = nullptr;
+        tail = nullptr;
     }
     --count;
 }
@@ -135,7 +143,7 @@ void replisty::Lista_Wyswietlanie_Nastepnego_elementu(int index) {
     for (int i = 1; i < index; i++) {
         obecny_element = obecny_element->next;
     }
-    if (obecny_element->next != 0) {
+    if (obecny_element->next != nullptr) {
         std::cout << obecny_element->next->data << std::endl;
     }
     else {
@@ -150,7 +158,7 @@ void replisty::Lista_Wyswietlanie_poprzedniego_elementu(int index) {
     for (int i = 1; i < index; i++) {
         obecny_element = obecny_element->next;
     }
-    if (obecny_element->prev != 0) {
+    if (obecny_element->prev != nullptr) {
         std::cout << obecny_element->prev->data << std::endl;
     }
     else {
@@ -166,14 +174,19 @@ void replisty::Lista_Usuwanie_wybranego_elementu(int index) {
         obecny_element = obecny_element->next;
     }
 
-    if (obecny_element->prev != 0) {
+    if (obecny_element == nullptr) {
+        std::cout << "Nie istnieje taki element" << std::endl;
+        return;
+    }
+
+    if (obecny_element->prev != nullptr) {
         obecny_element->prev->next = obecny_element->next;
     }
     else {
         head = obecny_element->next;
     }
 
-    if (obecny_element->next != 0) {
+    if (obecny_element->next != nullptr) {
         obecny_element->next->prev = obecny_element->prev;
     }
     else {
@@ -187,13 +200,13 @@ void replisty::Lista_Usuwanie_wybranego_elementu(int index) {
 void replisty::Lista_Czyszczenie() {
     elisty* obecny_element = head;
 
-    while (obecny_element != 0) {
+    while (obecny_element != nullptr) {
         elisty* nws = obecny_element;
         obecny_element = obecny_element->next;
         delete nws;
     }
 
-    head = 0;
-    tail = 0;
+    head = nullptr;
+    tail = nullptr;
     count = 0;
 }
