@@ -70,6 +70,10 @@ void replisty::Lista_Dodanie_do_srodka(char v, int index) {
         Lista_Dodanie_na_koniec(v);
         return;
     }
+    if (index > count){
+        std::cout << "Nie ma tyle elementów w liscie" << std::endl;
+        }
+
     elisty* obecny_element = head;
 
     for (int i = 0; i < index; i++) {
