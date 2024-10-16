@@ -12,6 +12,7 @@ replisty::~replisty() {
 void replisty::Lista_Dodanie_na_poczatek(char v) {
     elisty* nws = new elisty(v);
     nws->next = head;
+    nws->prev = nullptr;
     head = nws;
     if (count == 0) {
         tail = nws;
@@ -101,9 +102,6 @@ void replisty::Lista_Usuwanie_pierwszego_elementu() {
         delete head;
         head = nws;
         head->prev = nullptr;
-        if (head != nullptr) { 
-            head->prev = nullptr; 
-        }
     }
     if (count == 1) {
         delete head;
@@ -124,9 +122,6 @@ void replisty::Lista_usuwanie_ostatniego_elementu() {
         delete tail;
         tail = nws;
         tail->next = nullptr;
-        if (tail != nullptr) { 
-            tail->next = nullptr; 
-        }
     }
     if (count == 1) {
         delete tail;
