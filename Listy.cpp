@@ -87,7 +87,7 @@ void replisty::Lista_Dodanie_do_srodka(char v, int index) {
     nws->next = obecny_element;
     nws->prev = temp_prev;
 
-    if (temp_prev != 0) {
+    if (temp_prev != nullptr) {
         temp_prev->next = nws;
     }
     obecny_element->prev = nws;
